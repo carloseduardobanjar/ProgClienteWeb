@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercício 2</title>
+		<meta charset="utf-8">
+		<script>
+			function verificaPrimo()
+			{
+				var num = document.getElementById("num").value;
+				var qtddivisores = 0;
+				for (var divisor = 2; divisor <= Math.sqrt(num); divisor++)
+				{
+					if (num % divisor == 0)
+					{
+						qtddivisores++;
+					}
+				}
+
+				if (qtddivisores>0)
+				{
+					var exibe = "O número " + num + " não é primo";
+					document.getElementById ("texto").innerHTML = exibe; 
+				}
+				else
+				{
+					var exibe = "O número " + num + " é primo";
+					document.getElementById ("texto").innerHTML = exibe;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p id = "texto"> Insira um número </p>
+		<input type = "number" id="num">
+		<button onclick="javascript: verificaPrimo();">Verificar</button>
+	</body>
+</html>
