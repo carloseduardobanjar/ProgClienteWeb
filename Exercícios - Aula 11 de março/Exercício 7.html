@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercício 7</title>
+		<meta charset="utf-8">
+		<script>
+			function inverteFrase()
+			{
+				var texto = document.getElementById("texto").value;
+				var qtd = texto.length;
+				var normal = [];
+
+				for (var i = 0; i < qtd ; i++) 
+				{
+					normal[i] = texto.charAt(i);
+				}
+				
+				var inversa = [];
+				var j = qtd - 1;
+
+				for (i=0; i < qtd; i++) 
+				{
+   					inversa[i] = normal[j];
+  					j--;
+				}
+
+				for (i = 0; i < qtd; i++)
+				{
+					document.write(inversa[i]);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p> Insira uma frase: </p>
+		<input id = "texto">
+		<button onclick = "inverteFrase();">Inverter</button>
+	</body>
+</html>
