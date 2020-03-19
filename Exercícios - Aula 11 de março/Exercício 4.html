@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercício 4</title>
+		<meta charset="utf-8">
+		<script>
+			function calculaFibonacci()
+			{
+				var num = document.getElementById("num").value;
+				if (num == 1 || num == 2)
+					var z = 1;
+				else
+				{
+					var z = 0;
+					var x = y = 1;
+					for (i = 3; i <= num; i++)
+					{
+						z = y + x;
+						x = y;
+						y = z;
+					}
+               	}
+               	var exibe = "O valor de Fibonacci para " + num + " é " + z;
+               	document.getElementById ("texto").innerHTML = exibe;
+			}
+		</script>
+	</head>
+	<body>
+		<p id = "texto"> Insira um número: </p>
+		<input type = "number" id="num">
+		<button onclick="calculaFibonacci();">Calcular</button>
+	</body>
+</html>
