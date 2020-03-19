@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercício 6</title>
+		<meta charset="utf-8">
+		<script>
+			function criptografia()
+			{	
+				var text1 = document.getElementById("texto").value;
+				var text2 = text1.toLowerCase(); 
+				var qtd = text2.length;
+				var vcaracter = [];
+				 
+				for (var i = 0; i < qtd ; i++) //Tranforma a string em um vetor de caracteres
+				{
+					vcaracter[i] = text2.charAt(i);
+				}
+		
+				for (i = 0; i < qtd; i++) //Procura as letras e as substitui
+				{
+   					switch(vcaracter[i]) 
+   					{
+  						case "t": 
+  							vcaracter[i] = "p";
+    						break;
+ 						case "p":
+ 							vcaracter[i] = "t";
+   							break;
+   						case "e": 
+  							vcaracter[i] = "o";
+    						break;
+ 						case "o":
+ 							vcaracter[i] = "e";
+   							break;
+   						case "n": 
+  							vcaracter[i] = "l";
+    						break;
+ 						case "l":
+ 							vcaracter[i] = "n";
+   							break;
+   						case "i": 
+  							vcaracter[i] = "a";
+    						break;
+    					case "a": 
+  							vcaracter[i] = "i";
+    						break;
+   						case "s": 
+  							vcaracter[i] = "r";
+    						break;
+    					case "r": 
+  							vcaracter[i] = "s";
+    						break;
+  					}
+				}
+				vcaracter[0] = vcaracter[0].toUpperCase();
+				for (i = 0; i < qtd; i++)
+				{
+					document.write(vcaracter[i]);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p> Insira uma palavra: </p>
+		<input id = "texto">
+		<button onclick = "criptografia();">Enviar</button>
+	</body>
+</html>
