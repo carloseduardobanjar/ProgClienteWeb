@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercício 5</title>
+		<meta charset="utf-8">
+		<script>
+			function verificaPalindromo()
+			{
+				var palavra = document.getElementById("palavra").value;
+				var qtd = palavra.length;
+				var normal = [];
+
+				for (var i = 0; i < qtd ; i++) //Tranforma a string em um vetor de caracteres
+				{
+					normal[i] = palavra.charAt(i);
+				}
+				
+				var inversa = [];
+				var j = qtd - 1;
+
+				for (i=0; i < qtd; i++) //Preenche o vetor da palavra inversa
+				{
+   					inversa[i] = normal[j];
+  					j--;
+				}
+
+				for (i=0; i < qtd; i++) //Compara os vetores
+				{
+  					if (normal[i] == inversa[i]) 
+  						var result = " é palíndromo";
+  					else
+  					{
+  						var result = " não é palíndromo";
+  						i = qtd; 
+  					}
+				}
+               	var exibe = "A palavra " + palavra + " " + result;
+               	document.getElementById ("texto").innerHTML = exibe;
+			}
+		</script>
+	</head>
+	<body>
+		<p id = "texto"> Insira uma palavra: </p>
+		<input id = "palavra">
+		<button onclick = "verificaPalindromo();">Verificar</button>
+	</body>
+</html>
